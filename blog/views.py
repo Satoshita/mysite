@@ -7,3 +7,10 @@ def home(request):
         'blogs': blogs,
     }
     return render(request, 'home.html', ctx)
+
+def detail(request, pk):
+    blog = Post.objects.get(id=pk)
+    ctx = {
+        'blog': blog,
+    }
+    return render(request, 'detail.html', ctx)

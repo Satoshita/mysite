@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %}My Site Detail{% endblock %}
+
+{% block content %}
+    <h1>{{ blog.title }}</h1>
+    <p>{{ blog.text }}</p>
+    <small>{{ blog.created_date }}</small>
+<a href="/">Go Back to Home</a>
+{% endblock %}

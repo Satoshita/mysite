@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}{% endblock %}
+{% block title %}Django My Site{% endblock %}
 
 {% block content %}
     <h1>Blog List</h1>
@@ -8,7 +8,7 @@
     {% for blog in blogs %}
     <div class="card p-0 mb-2">
         <div class="card-header">
-            <h3>{{ blog.title }}</h3>
+            <h3><a href="{% url 'blog:detail' blog.id %}">{{ blog.title }}</a></h3>
         </div>
         <div class="card-body">
             <p>{{ blog.text }}</p>
