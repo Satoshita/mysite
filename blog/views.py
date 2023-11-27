@@ -1,16 +1,10 @@
 from django.shortcuts import render
 from .models import Post
 
-def home(request):
-    blogs = Post.objects.all().order_by('-created_date')[:]
+def post_list(request):
+    posts = Post.objects.all().order_by('-created_date')[:]
     ctx = {
-        'blogs': blogs,
+        'posts': posts,
     }
-    return render(request, 'home.html', ctx)
+    return render(request, 'blog/post_list.html', ctx)
 
-def detail(request, pk):
-    blog = Post.objects.get(id=pk)
-    ctx = {
-        'blog': blog,
-    }
-    return render(request, 'detail.html', ctx)
